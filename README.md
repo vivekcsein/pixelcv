@@ -1,2 +1,3 @@
-# pixelcv
-Hosted at www.pixelcv.xyz
+#Pixel CV
+
+Every pixel connecting to the human over the bots
