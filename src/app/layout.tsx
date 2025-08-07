@@ -1,16 +1,7 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
+import type { Metadata } from "next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import LayoutProvider from "@/components/providers/LayoutProvider";
 
 export const metadata: Metadata = {
   title: "Pixel CV",
@@ -24,10 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={` antialiased relative scroll-smooth`}>
+        <LayoutProvider>{children}</LayoutProvider>
       </body>
     </html>
   );
