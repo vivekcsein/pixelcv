@@ -1,11 +1,5 @@
 // styles/fonts.ts
-import {
-  Cabin,
-  Lora,
-  Nunito,
-  Poppins,
-  Roboto,
-} from "next/font/google";
+import { Cabin, Lora, Nunito, Poppins, Roboto } from "next/font/google";
 
 // Font definitions with variable names for CSS usage
 export const roboto = Roboto({

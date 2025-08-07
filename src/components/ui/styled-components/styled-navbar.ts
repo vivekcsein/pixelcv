@@ -32,7 +32,7 @@ export const Navbar__mobile_header = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-`
+`;
 
 // Fullscreen blur overlay for mobile menu
 export const Navbar__mobile_overlay = styled(motion.div)`
@@ -69,7 +69,6 @@ export const Navbar__mobile_menulist = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-
 `;
 
 export const HamburgerMenu = styled.button`
