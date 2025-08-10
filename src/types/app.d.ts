@@ -1,3 +1,9 @@
+
+type imageProps = {
+  src: string;
+  alt: string;
+  href: string;
+};
 export interface navlink {
   id: string;
   label: string;
@@ -16,22 +22,23 @@ export interface HeaderData {
   navbarlinks: Array<extendedNavlink>;
 }
 
-export interface MobileMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
-  items: navlink[];
-  onItemClick?: (link: navlink) => void;
-}
-
 export interface NavlinkProps {
   link: navlink;
   isActive?: boolean;
   onClick?: (link: navlink) => void;
   isMobile?: boolean;
 }
+export interface footerLinksType {
+  footer_messages: {
+    heading: string;
+    susbcribe: string;
+    description: string;
+    copyright: string;
+  };
 
-type imageProps = {
-  src: string;
-  alt: string;
-  href: string;
-};
+  footerSection: Array<string>;
+  quickLinks: Array<navlink>;
+  customerService: Array<navlink>;
+  socialLinks: Array<navlink>;
+  features: Array<navlink>;
+}
