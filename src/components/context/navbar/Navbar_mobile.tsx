@@ -2,16 +2,14 @@
 
 import React from "react";
 import { extendedNavlink } from "@/types/app";
-
-import Navbar_link from "./Navbar_link";
 import { AnimatePresence } from "framer-motion";
+import Navbar_mobile_content from "./Navbar_mobile_content";
+import { useHamburgerMenu } from "@/components/providers/HamburgerProvider";
 
 import {
   Navbar__mobile_content,
   Navbar__mobile_overlay,
-  Navbar__mobile_menulist,
 } from "@/components/ui/styled-components/styled-navbar";
-import { useHamburgerMenu } from "@/components/providers/HamburgerProvider";
 
 interface Navbar_mobileProps {
   navbarlinks: Array<extendedNavlink>;
@@ -71,12 +69,10 @@ const Navbar_mobile: React.FC<Navbar_mobileProps> = ({
             animate="open"
             exit="closed"
           >
-            <Navbar__mobile_menulist>
-              {navbarlinks.map((link) => {
-                return <Navbar_link key={link.id} link={link} />;
-              })}
-              {isAuthenticated && <div></div>}
-            </Navbar__mobile_menulist>
+            <Navbar_mobile_content
+              navbarlinks={navbarlinks}
+              isAuthenticated={isAuthenticated}
+            />
           </Navbar__mobile_content>
         </>
       )}
