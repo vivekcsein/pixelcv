@@ -10,7 +10,7 @@ export const Header__main = styled(motion.header)`
   left: 0;
   right: 0;
   height: 60px;
-  background: #ffffff;
+  background: var(--background);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
@@ -25,7 +25,6 @@ export const Navbar__mobile_header = styled.nav`
   left: 0;
   right: 0;
   height: 60px;
-  background: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
@@ -54,7 +53,7 @@ export const Navbar__mobile_content = styled(motion.div)`
   right: 0;
   width: 50%;
   height: calc(100vh - 60px);
-  background: #ffffff;
+  background: var(--background);
   z-index: 999;
   padding: 40px 20px;
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -87,7 +86,7 @@ export const HamburgerMenu = styled.button`
 export const HamburgerLine = styled(motion.div)`
   width: 25px;
   height: 3px;
-  background: #333;
+  background: var(--muted-foreground);
   margin: 2px 0;
   border-radius: 2px;
 `;

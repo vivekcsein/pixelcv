@@ -119,12 +119,12 @@ body {
 /* Code for Firefox */
 ::-moz-selection {
   color: var(--color-white);
-  background: var(--secondary-foreground);
+  background: var(--accent-foreground);
 }
 
 ::selection {
   color: var(--color-white);
-  background: var(--secondary-foreground);
+  background: var(--accent-foreground);
 }
 
 @layer utilities {

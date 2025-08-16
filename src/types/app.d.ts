@@ -1,10 +1,17 @@
-
-type imageProps = {
+// Image metadata for logos, icons, etc.
+export type ImageProps = {
+  id: string;
   src: string;
   alt: string;
-  href: string;
+  href?: string;
+  width?: number;
+  height?: number;
+  color?: string;
+  className?: string;
 };
-export interface navlink {
+
+// Basic navigation link
+export interface NavLink {
   id: string;
   label: string;
   href: string;
@@ -12,33 +19,44 @@ export interface navlink {
   isExternal?: boolean;
 }
 
-export interface extendedNavlink extends navlink {
-  discription?: string;
-  sublinks?: Array<navlink>;
+// Extended navigation link with nested structure
+export interface ExtendedNavLink extends NavLink {
+  description?: string;
+  subLinks?: NavLink[];
 }
 
-export interface HeaderData {
-  header_logo: imageProps | string;
-  navbarlinks: Array<extendedNavlink>;
+// Header configuration
+export interface HeaderConfig {
+  logo: ImageProps | string;
+  navLinks: ExtendedNavLink[];
 }
 
-export interface NavlinkProps {
-  link: navlink;
-  isActive?: boolean;
-  onClick?: (link: navlink) => void;
-  isMobile?: boolean;
-}
-export interface footerLinksType {
-  footer_messages: {
+// Footer configuration
+export interface FooterConfig {
+  messages: {
     heading: string;
-    susbcribe: string;
+    subscribe: string;
     description: string;
     copyright: string;
+    contact?: string;
   };
 
-  footerSection: Array<string>;
-  quickLinks: Array<navlink>;
-  customerService: Array<navlink>;
-  socialLinks: Array<navlink>;
-  features: Array<navlink>;
+  logo?: ImageProps | string;
+  sections?: string[];
+
+  quickLinks?: NavLink[];
+  serviceLinks?: NavLink[];
+  socialLinks?: NavLink[];
+  featureLinks?: NavLink[];
+}
+
+// Root layout data structure
+export interface RootLayoutData {
+  header: HeaderConfig;
+  footer: FooterConfig;
+}
+
+// Final layout wrapper
+export interface RootLayoutResponse {
+  layout: RootLayoutData;
 }

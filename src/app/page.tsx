@@ -1,3 +1,9 @@
+import Hero from "@/components/layouts/Hero";
+
 export default function Home() {
-  return <section>Pixel CV</section>;
+  return (
+    <section className="relative">
+      <Hero />
+    </section>
+  );
 }
